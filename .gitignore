@@ -1,9 +1,5 @@
-.idea/
-.vscode/
-.ht_access
-.htaccess
-.vscode
-/shared
 .DS_Store
-/node_modules
-/dist
+.sass-cache
+dist
+node_modules
+vendor
