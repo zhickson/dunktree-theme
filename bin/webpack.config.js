@@ -1,7 +1,6 @@
 'use strict';
 
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const AssetsPlugin = require('assets-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -64,25 +63,11 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1,
-                minimize: !DEV
+                importLoaders: 1
               },
             },
             {
               loader: 'postcss-loader',
-              options: {
-                ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-                plugins: () => [
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                  }),
-                ],
-              },
             },
             'sass-loader',
           ],
