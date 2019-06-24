@@ -13,14 +13,9 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer wrapper">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dunktree' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'dunktree' ), 'WordPress' );
-				?>
-			</a> <span class="sep"> | </span> © 2019 Dunktree™
+			<p class="text-small">Copyright © 2019 Dunktree™ &mdash; ABN 71 266 580 998 &mdash; <a href="/colophon/">Colophon</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

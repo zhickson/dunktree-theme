@@ -1,3 +1,11 @@
+.site-branding {
+	padding: 4rem 0;
+	
+	img {
+		width: 195px;
+	}
+}
+
 .sticky {
 	display: block;
 }
@@ -20,4 +28,24 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.home {
+
+	.entry-title {
+		text-align: center;
+		font-size: 4rem;
+		background: -webkit-gradient(linear, left top, right bottom, from($color__link), to($color__link-visited));
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+	}
+
+	.has-medium-font-size {
+		color: white;
+	}
+
+	h3, .h3 {
+		font-size: 2rem;
+	}
+
 }

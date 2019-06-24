@@ -43,3 +43,7 @@ mark, ins {
 big {
 	font-size: 125%;
 }
+
+.text-small {
+	@include font-size(0.8);
+}
