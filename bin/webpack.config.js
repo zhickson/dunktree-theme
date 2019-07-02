@@ -24,7 +24,6 @@ const paths = {
     appIndexJs: resolveApp('src/core.js'),
     appNodeModules: resolveApp('node_modules'),
     appImages: resolveApp('src/images'),
-    appFonts: resolveApp('src/fonts'),
 };
 
 const DEV = process.env.NODE_ENV === 'development';
@@ -82,15 +81,6 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: '../fonts/[name].[ext]',
-          },
-        },
-      },
     ],
   },
   plugins: [
@@ -105,8 +95,7 @@ module.exports = {
       filename: 'assets.json',
     }),
     new CopyWebpackPlugin([
-        { from: paths.appImages, to: paths.appBuild + '/images' },
-        { from: paths.appFonts, to: paths.appBuild + '/fonts' }
+        { from: paths.appImages, to: paths.appBuild + '/images' }
     ], { debug: 'info' }),
     !DEV &&
       new webpack.optimize.UglifyJsPlugin({
@@ -130,11 +119,11 @@ module.exports = {
     DEV &&
       new BrowserSyncPlugin({
           notify: false,
-          host: 'dunktree.test',
+          host: 'dunktree.local',
           port: 4000,
           logLevel: 'silent',
           files: ['./*.php'],
-          proxy: 'https://dunktree.test/',
+          proxy: 'http://dunktree.local/',
       }),
   ].filter(Boolean),
 };
