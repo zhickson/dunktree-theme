@@ -235,6 +235,7 @@ add_filter('style_loader_tag', 'dunktree_clean_style_tag');
  * Clean up output of <script> tags
  */
 function dunktree_clean_script_tag($input) {
+	if ( is_admin() ) return $input;
 	$input = str_replace("type='text/javascript' ", '', $input);
 	return str_replace("'", '"', $input);
 }
@@ -291,7 +292,7 @@ add_filter('get_bloginfo_rss', 'dunktree_remove_default_description');
  * Add defer to scripts, let's keep them till last
  */
 function dunktree_add_script_attributes($tag, $handle) {
-    //if ( 'my-js-handle' !== $handle ) return $tag;
+	if ( is_admin() ) return $tag;
     return str_replace( ' src', ' defer="defer" src', $tag );
 }
 add_filter('script_loader_tag', 'dunktree_add_script_attributes', 10, 2);
